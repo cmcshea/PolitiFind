@@ -1,9 +1,36 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all election
-  app.get("/api/election", function(req, res) {
-    db.Example.findAll({}).then(function(electiondb) {
+  // Get all senate
+  app.get("/senate", function(req, res) {
+    db.senate.findAll({}).then(function(electiondb) {
+      res.json(electiondb);
+    });
+  });
+
+  // Get all books of a specific state
+  app.get("/senate/state/:state", function(req, res) {
+    db.senate
+      .findAll({
+        where: {
+          state: req.params.state
+        }
+      })
+      .then(function(electiondb) {
+        res.json(electiondb.senate);
+      });
+  });
+
+  // Get all house
+  app.get("/house", function(req, res) {
+    db.house.findAll({}).then(function(electiondb) {
+      res.json(electiondb);
+    });
+  });
+
+  // Get all president
+  app.get("/president", function(req, res) {
+    db.president.findAll({}).then(function(electiondb) {
       res.json(electiondb);
     });
   });

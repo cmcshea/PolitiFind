@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   var house = sequelize.define("president", {
-    year: DataTypes.STRING,
+    year: DataTypes.INTEGER,
     state: DataTypes.STRING,
     state_po: DataTypes.STRING,
     state_fips: DataTypes.INTEGER,
@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
     office: DataTypes.STRING,
     candidate: DataTypes.STRING,
     party: DataTypes.STRING,
-    writein: DataTypes.BOOLEAN,
+    writein: DataTypes.STRING,
     mode: DataTypes.STRING,
     candidatevotes: DataTypes.INTEGER,
     totalvotes: DataTypes.INTEGER,

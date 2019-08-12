@@ -3,7 +3,7 @@
     "username": "root",
     "password": "",
     "database": "electiondb",
-    "insecureAuth": true,
+    "insecureAuth": "true",
     "host": "localhost",
     "port": 3306,
     "dialect": "mysql"
